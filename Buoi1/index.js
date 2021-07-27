@@ -15,7 +15,7 @@ var bookObj = {
 }
 
 createBtn.addEventListener('click', () => {
-    if (title.value && author.value && isbn.value && imageLink.value === "") {
+    if (!title.value || !author.value || !isbn.value || !imageLink.value) {
         alert("Xin hãy nhập đầy đủ thông tin");
     } else {
         bookObj.title = `${title.value}`;
