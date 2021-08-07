@@ -6,6 +6,16 @@ const app = express();
 
 app.use(express.json());
 
+function validateCourse(course) {
+    const schema = Joi.object(
+        {
+            name: Joi.string().min(3).required(),
+            price: Joi.number().min(1000000).required()
+        }
+    )
+    return schema.validate(course);
+}
+
 const courses = [
     { id: '1', name: 'C4EJS', price: 2000000 },
     { id: '2', name: 'Code Intensive', price: 3000000 },
@@ -71,7 +81,7 @@ app.delete('/api/course/:id', function (req, res) {
 
     if (courses[req.params.id - 1] != null) {
 
-        delete courses[req.params.id - 1];
+        courses.splice(req.params.id - 1, 1);
 
         console.log("Delete Successful");
 
@@ -81,15 +91,5 @@ app.delete('/api/course/:id', function (req, res) {
 
     res.send(courses);
 })
-
-function validateCourse(course) {
-    const schema = Joi.object(
-        {
-            name: Joi.string().min(3).required(),
-            price: Joi.number().min(1000000)
-        }
-    )
-    return schema.validate(course);
-}
 
 app.listen(8080, () => console.log('Server dang lang nghe tren cong 8080'));
