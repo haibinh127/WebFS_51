@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "img": "https://www.vietnamonline.com/media/uploads/froala_editor/images/VNO_Watermelon5.jpg",
+        "title": "Watermelon",
+        "price": 40
+    },
+    {
+        "id": 2,
+        "img": "https://imgs.mongabay.com/wp-content/uploads/sites/30/2019/09/13114250/banana-app-Banner-768x512.jpg",
+        "title": "Banana",
+        "price": 50
+    },
+    {
+        "id": 3,
+        "img": "https://thuocdantoc.vn/wp-content/uploads/2018/12/di-ung-kiwi-tat-ca-nhung-thong-tin-ban-can-nam-ro.jpg",
+        "title": "Kiwi",
+        "price": 60
+    }
+]
